@@ -1,20 +1,16 @@
 class notes { 
-  float ypos, speed, xpos, clrr, clrg, clrb;//here are the values "yposition, speed of the note, xposition, and the r, g and b values
-  notes (float y, float s, float x, float r, float g, float b) {  
+  private float ypos, speed, xpos;
+  notes (float y, float s, float x) {  
     ypos = y; 
     speed = s; 
     xpos = x;
-    clrr = r;
-    clrg = g;
-    clrb = b;
   } 
   void update() { 
+    fill(ypos/2, 0, xpos/2);
     ypos += speed; 
-    if (ypos > width) { 
-      ypos = 0; 
+    if (ypos > height) { 
+      ypos = 0;
     } 
-    noStroke();
-    fill(clrr,clrg,clrb);
-    ellipse(xpos, ypos, 30, 30); 
-  } 
+    ellipse(xpos, ypos, 30, 30);
+  }
 } 
